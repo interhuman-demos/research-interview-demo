@@ -1,0 +1,86 @@
+# --- Dependencies ---
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+jspm_packages/
+
+# --- Build output ---
+/.next/
+/out/
+/build
+/dist
+*.tsbuildinfo
+next-env.d.ts
+
+# --- Testing & coverage ---
+/coverage
+*.lcov
+.nyc_output
+
+# --- Logs ---
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+
+# --- Env files (never commit secrets) ---
+.env
+.env.*
+!.env.local.example
+!.env.example
+
+# --- Prisma ---
+# generated client lives in node_modules; migrations ARE committed
+/prisma/*.db
+/prisma/*.db-journal
+/prisma/migrations/dev.db*
+
+# --- Vercel ---
+.vercel
+
+# --- Editor / IDE ---
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/launch.json
+*.swp
+*.swo
+*~
+
+# --- OS noise ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# --- Certificates / keys ---
+*.pem
+*.key
+*.crt
+
+# --- Local scratch ---
+/tmp/
+*.tmp
+
+# --- Local agent / Claude tooling ---
+.agents/
+.claude/
+.playwright-mcp/
+skills-lock.json
+
+# --- Misc ---
+.cache/
+.turbo/
+.eslintcache

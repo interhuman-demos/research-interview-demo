@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fafaf7;
+  --foreground: #14110f;
+  --muted: #f0ede4;
+  --muted-foreground: #6b6359;
+  --accent: #2f6f5f;
+  --accent-foreground: #ffffff;
+  --border: #e6e1d5;
+  --card: #ffffff;
+  --danger: #b14a3d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #14110f;
+    --foreground: #f3ece0;
+    --muted: #1f1b18;
+    --muted-foreground: #9c9387;
+    --accent: #4ea890;
+    --accent-foreground: #14110f;
+    --border: #2a2521;
+    --card: #1a1614;
+    --danger: #d4574e;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+@keyframes answer-confirm-pop {
+  0% { transform: scale(0.4); opacity: 0; }
+  60% { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes answer-confirm-check {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes answer-confirm-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes answer-confirm-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.answer-confirm-backdrop {
+  animation: answer-confirm-fade-in 180ms ease-out forwards;
+}
+.answer-confirm-backdrop[data-leaving="true"] {
+  animation: answer-confirm-fade-out 220ms ease-in forwards;
+}
+.answer-confirm-card {
+  animation: answer-confirm-pop 360ms cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+.answer-confirm-check path {
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: answer-confirm-check 420ms ease-out 200ms forwards;
+}
